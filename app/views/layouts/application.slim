@@ -1,0 +1,22 @@
+<!DOCTYPE html
+html
+  head
+    title Tournament
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    nav class="navbar navbar-expand-lg navbar-light bg-light"
+      div class="container-fluid"
+        a class="navbar-brand" href="/" Tournament
+        div class="collapse navbar-collapse" id="navbarNav"
+          ul class="navbar-nav"
+            li class="nav-item"
+              a class="nav-link active" href="/teams" Teams
+            li class="nav-item"
+              a class="nav-link" href="/divisions" Divisions
+    = yield
