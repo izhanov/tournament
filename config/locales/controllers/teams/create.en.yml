@@ -1,0 +1,4 @@
+en:
+  teams:
+    create:
+      success: Team successfully added

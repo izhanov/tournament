@@ -1,1 +1,13 @@
-@import 'bootstrap/dist/css/bootstrap.min.css'
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.alert {
+  &-success {
+    background-color: #8DBF40;
+    color: white;
+  }
+
+  &-error {
+    background-color: #bf4840;
+    color: white;
+  }
+}

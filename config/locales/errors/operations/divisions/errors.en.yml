@@ -1,0 +1,7 @@
+en:
+  errors:
+    operations:
+      divisions:
+        create:
+          validation_error: Division must have name
+          name_not_unique: Division with this name already exists

@@ -1,0 +1,25 @@
+.container.mt-3
+  .container
+    .row
+      .col.md-4
+        = form_with model: @team || Team.new, class: 'row g-3' do |f|
+          .col-auto
+              = f.label :name, class: 'visually-hidden'
+              = f.text_field :name, class: 'form-control', placeholder: 'Team name'
+          .col-auto
+              = f.submit t('.submit'), class: 'btn btn-primary mb-3'
+
+  .container
+    - if @teams.any?
+      table.table
+        thead
+          tr
+            th scope='col' ID
+            th scope='col' Name
+        tbody
+          - @teams.each do |team|
+            tr
+              th = team.id
+              th = team.name
+    - else
+      h1 No any teams yet

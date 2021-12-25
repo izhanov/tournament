@@ -1,0 +1,7 @@
+en:
+  errors:
+    operations:
+      teams:
+        create:
+          validation_error: Team must have name
+          name_not_unique: Team with this name already exists

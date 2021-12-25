@@ -1,0 +1,28 @@
+.container.mt-3
+  .container
+    .row
+      .col.md-6
+        = form_with model: @division || Division.new do |f|
+            = f.label :name, class: 'form-label'
+            = f.text_field :name, class: 'form-control', placeholder: 'Division name'
+            = f.submit t('.submit'), class: 'btn btn-primary mt-3'
+
+
+  .container
+    - if @divisions.any?
+      - @divisions.each do |division|
+        h2 = "##{division.id} #{division.name}"
+        - if division.teams.any?
+          table.table
+            thead
+              tr
+                th scope='col' ID
+                th scope='col' Name
+            tbody
+              - division.teams.each do |team|
+                tr
+                  th = team.id
+                  th = team.name
+
+    - else
+      h1 No any divisions yet

@@ -19,4 +19,7 @@ html
               a class="nav-link active" href="/teams" Teams
             li class="nav-item"
               a class="nav-link" href="/divisions" Divisions
+    - flash.each do |kind, msg|
+      div class="alert-#{kind}"
+        = msg
     = yield
