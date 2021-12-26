@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :divisions do
     resources :teams_in_divisions
   end
+
+  get :tourney, to: 'tourneys#index'
 end

@@ -16,9 +16,11 @@ html
         div class="collapse navbar-collapse" id="navbarNav"
           ul class="navbar-nav"
             li class="nav-item"
-              a class="nav-link active" href="/teams" Teams
+              a class="nav-link" href="/teams" Teams
             li class="nav-item"
               a class="nav-link" href="/divisions" Divisions
+            li class="nav-item"
+              a class="nav-link" href="/tourney" Tourney
     - flash.each do |kind, msg|
       div class="alert-#{kind}"
         = msg

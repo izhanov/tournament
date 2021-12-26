@@ -12,17 +12,22 @@
     - if @divisions.any?
       - @divisions.each do |division|
         h2 = "##{division.id} #{division.name}"
+
+        = link_to 'Add to division', new_division_teams_in_division_path(division), class: 'btn btn-success mb-3'
+
         - if division.teams.any?
           table.table
             thead
               tr
                 th scope='col' ID
                 th scope='col' Name
+                th scope='col' Score
             tbody
               - division.teams.each do |team|
                 tr
                   th = team.id
                   th = team.name
+                  th = team.score_in_division
 
     - else
       h1 No any divisions yet

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Preparing...."
 teams = 16.times { Team.create!(name: Faker::Team.unique.name) }
 
 
@@ -20,3 +21,8 @@ end
 Team.all.pluck(:id).select(&:odd?).each do |team_id|
   division_b.teams_in_divisions.create!(team_id: team_id)
 end
+
+Team.create!(name: Faker::Team.unique.name)
+Team.create!(name: Faker::Team.unique.name)
+
+puts "Let's roll =>"

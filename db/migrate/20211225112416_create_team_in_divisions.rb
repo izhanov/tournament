@@ -8,6 +8,6 @@ class CreateTeamInDivisions < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :teams_in_divisions, [:division_id, :team_id], unique: true
+    add_index :teams_in_divisions, [:team_id, :division_id], unique: true
   end
 end

@@ -1,0 +1,4 @@
+en:
+  teams_in_divisions:
+    create:
+      success: Team successfully added to division

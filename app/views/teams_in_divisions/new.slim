@@ -1,0 +1,12 @@
+.container.mt-3
+  .container
+    .row
+      .col.md-4
+        = form_with model: [:division, @teams_in_division], class: 'row g-3' do |f|
+          .col-auto
+              = f.label :team_id, class: 'visually-hidden'
+              = f.select(:team_id, options_for_select(Team.not_in_division.pluck(:name, :id)), { prompt: true }, { class: 'form-select' })
+          .col-auto
+              = f.submit t('.submit'), class: 'btn btn-primary mb-3'
+
+        = link_to t('.back'), divisions_path

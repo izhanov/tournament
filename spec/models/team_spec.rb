@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Team, type: :model do
   it { is_expected.to have_db_column(:name).of_type(:string) }
   it { is_expected.to have_db_index(:name).unique(true) }
+  it { is_expected.to have_many(:matches) }
 
   describe 'Scopes' do
     describe '.not_in_division' do

@@ -1,0 +1,7 @@
+en:
+  errors:
+    operations:
+      teams_in_divisions:
+        add:
+          division_not_found: Division not found
+          team_not_found: Team not found

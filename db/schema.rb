@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_25_112416) do
+ActiveRecord::Schema.define(version: 2021_12_26_135931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2021_12_25_112416) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_divisions_on_name", unique: true
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.integer "competitor_id"
+    t.string "status"
+    t.string "result"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_matches_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -35,7 +45,8 @@ ActiveRecord::Schema.define(version: 2021_12_25_112416) do
     t.integer "score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["division_id", "team_id"], name: "index_teams_in_divisions_on_division_id_and_team_id", unique: true
+    t.index ["team_id", "division_id"], name: "index_teams_in_divisions_on_team_id_and_division_id", unique: true
   end
 
+  add_foreign_key "matches", "teams"
 end
